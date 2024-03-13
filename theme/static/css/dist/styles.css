@@ -777,13 +777,25 @@ select {
   position: static;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
+}
+
+.contents {
+  display: contents;
 }
 
 .h-screen {
@@ -796,6 +808,10 @@ select {
 
 .justify-center {
   justify-content: center;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .bg-gray-50 {
@@ -818,4 +834,16 @@ select {
 
 .tracking-normal {
   letter-spacing: 0em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-neutral-900 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(23 23 23 / var(--tw-bg-opacity));
+  }
+
+  .dark\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
 }
