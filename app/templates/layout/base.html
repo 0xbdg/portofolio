@@ -7,15 +7,36 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 		<link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
 		{% tailwind_css %}
 	</head>
 
 	<body class="dark:bg-neutral-900 dark:text-white box-border">
-		{% block navbar %} {% endblock navbar %} 
+		<header class="border-gray-200 dark:bg-gray-800">
+			<div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+				<a href="{% url 'index' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
+					<span class="h-8 text-2xl font-extrabold" >0xbdg</span>
+				</a>
+				<div class="flex items-center space-x-6 rtl:space-x-reverse">
+					<a href="#" class=" font-bold text-xl  text-blue-600 dark:text-blue-500 hover:underline">Contact</a>
+				</div>
+			</div>
+		</header>
+		<nav class="dark:bg-neutral-800 sticky top-0">
+			<div class="max-w-screen-xl px-4 py-3 mx-auto">
+				<div class="flex text-center justify-center text-24">
+					<ul class="flex flex-row font-medium mt-0 space-x-0 rtl:space-x-reverse text-sm">
+						<li><a href="{% url 'index' %}" class="text-gray-900 text-sm p-2 dark:text-white hover:underline">Home</a></li>
+						<li><a href="{% url 'article' %}" class="text-gray-900 text-sm p-2 dark:text-white hover:underline">Article</a></li>
+						<li><a href="{% url 'video-player'%}" class="text-gray-900 text-sm p-2 dark:text-white hover:underline">Video</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
         {% block contents %} {% endblock contents %} 
-        {% block footer %} {% endblock footer %}
+        <footer class="fixed left-0 bottom-0 w-full text-center"></footer>
 		<script src="{% static "js/main.js"%}"></script>
 	</body>
 </html>

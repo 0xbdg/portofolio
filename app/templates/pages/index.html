@@ -1,33 +1,44 @@
 {% extends "layout/base.html" %}
+{% load static %}
 {% block title %} Home {% endblock %}
 
-{% block navbar %}
-<nav class="">
-    <div class="max-w-screen-xl px-4 py-3 mx-auto">
-        <div class="flex text-center">
-            <ul class="flex flex-row font-medium mt-0 space-x-0 rtl:space-x-reverse text-sm">
-                <li><a href="#" class="text-gray-900 dark:text-white hover:underline">Home</a></li>
-                <li><a href="#" class="text-gray-900 dark:text-white hover:underline">Article</a></li>
-                <li><a href="#" class="text-gray-900 dark:text-white hover:underline">Video</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-{% endblock navbar%}
-
 {% block contents %}
-<div class="bg-gray-800 h-2/4">
-    <div class="text-center absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-white text-xl">
-        <h1>Hi, I'm <span class="bg-emerald-700">Benjamin</span> Guntara</h1>
-        <p>Web Developer and Cybersec Enthusiast</p>
-        <div class="flex">
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
-            <a href="#"><i class="fa fa-youtube"></i></a>
+<section class="dark:text-white p-4 pt-36">
+    <div class="flex flex-wrap">
+        <div class="w-full self-center px-6">
+            <h1 class="text-6xl font-extrabold"><span class="text-emerald-600">Benjamin</span> Guntara</h1>
+            <h2 class="text-lg font-medium text-slate-500 mb-5 py-4">I'am Software developer / Cybersecurity enthusiast</h2>
+            <p class="mb-10 text-slate-300 leading-relaxed">Loves <span class="text-blue-600">Malware Analysis</span> & <span class="text-blue-600">Reverse Engineering</span></p>
+            <a href="#" class="bg-green-700 py-3 px-8 text-base rounded-xl hover:bg-green-400">See my project</a>
         </div>
     </div>
-</div>
-{% endblock contents %}
+</section>
 
-{% block footer %}
-{% endblock footer%}
+<section class="pt-36 pb-36 p-4 flex justify-center items-center w-full">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-9 px-2">
+        <div class="col-span-4 w-full h-full ">
+            <div class="w-full h-full bg-indigo-400 rounded-md p-2 md:pl-4">
+                <h1 class="text-white text-xl font-medium py-2">About #1</h1>
+                <p class="text-gray-100 sm:text-sm text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt corporis consequuntur voluptate nulla iusto quam ut quasi, eaque quas omnis vero totam ullam, reprehenderit ratione pariatur accusamus suscipit odit nostrum?</p>
+            </div>
+        </div>
+        <div class="relative col-span-1 w-full h-full flex justify-center items-center">
+            <div class="h-full w-1 bg-indigo-300"></div>
+            <div class="absolute w-6 h-6 rounded-full bg-indigo-400 z-10 text-white text-center"></div>
+        </div>
+        <div class="col-span-4 w-full h-full"></div>
+
+        <div class="col-span-4 w-full h-full"></div>
+        <div class="relative col-span-1 w-full h-full flex justify-center items-center">
+            <div class="h-full w-1 bg-indigo-300"></div>
+            <div class="absolute w-6 h-6 rounded-full bg-indigo-400 z-10 text-white text-center"></div>
+        </div>
+        <div class="col-span-4 w-full h-full ">
+            <div class="w-full h-full bg-indigo-400 rounded-md p-2 md:pl-4">
+                <h1 class="text-white text-xl font-medium py-2">About #2</h1>
+                <p class="text-gray-100 sm:text-sm text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt corporis consequuntur voluptate nulla iusto quam ut quasi, eaque quas omnis vero totam ullam, reprehenderit ratione pariatur accusamus suscipit odit nostrum?</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock contents %}
