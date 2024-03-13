@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-        <title>{%block title%} {%endblock%}</title>
+        <title>{% block title %} {% endblock %}</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,9 +13,9 @@
 	</head>
 
 	<body class="dark:bg-neutral-900 dark:text-white box-border">
-		{% block navbar %} {%endblock navbar%} 
-        {% block contents%} {% endblock contents %} 
-        {% block footer%} {%endblock footer%}
+		{% block navbar %} {% endblock navbar %} 
+        {% block contents %} {% endblock contents %} 
+        {% block footer %} {% endblock footer %}
 		<script src="{% static "js/main.js"%}"></script>
 	</body>
 </html>

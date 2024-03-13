@@ -1,18 +1,24 @@
-{%extends "layout/base.html"%}
-{%block title %} Home {%endblock%}
+{% extends "layout/base.html" %}
+{% block title %} Home {% endblock %}
 
 {% block navbar %}
-<nav class="overflow-hidden">
-    <a href="#" class="block float-left text-center p-4 text-sm no-underline border-b-0">Home</a>
-    <a href="#" class="block float-left text-center p-4 text-sm no-underline border-b-0">Article</a>
-    <a href="#" class="block float-left text-center p-4 text-sm no-underline border-b-0">Video Player</a>
+<nav class="">
+    <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex text-center">
+            <ul class="flex flex-row font-medium mt-0 space-x-0 rtl:space-x-reverse text-sm">
+                <li><a href="#" class="text-gray-900 dark:text-white hover:underline">Home</a></li>
+                <li><a href="#" class="text-gray-900 dark:text-white hover:underline">Article</a></li>
+                <li><a href="#" class="text-gray-900 dark:text-white hover:underline">Video</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
 {% endblock navbar%}
 
-{%block contents%}
+{% block contents %}
 <div class="bg-gray-800 h-2/4">
     <div class="text-center absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-white text-xl">
-        <h1><span>Benjamin</span> Guntara</h1>
+        <h1>Hi, I'm <span class="bg-emerald-700">Benjamin</span> Guntara</h1>
         <p>Web Developer and Cybersec Enthusiast</p>
         <div class="flex">
             <a href="#"><i class="fa fa-linkedin"></i></a>
@@ -21,6 +27,6 @@
         </div>
     </div>
 </div>
-{%endblock contents%}
+{% endblock contents %}
 {% block footer %}
 {% endblock footer%}
