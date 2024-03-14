@@ -141,3 +141,8 @@ if (os.name == 'nt' or sys.platform == 'win32'): #windows
     NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
 elif (os.name == 'posix'): #linux & mac
     NPM_BIN_PATH = "/usr/bin/npm"
+
+# Media
+    
+MEDIA_URL = os.path.join(BASE_DIR,"media")
+MEDIA_ROOT = "/media/"
