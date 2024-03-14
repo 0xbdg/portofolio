@@ -8,14 +8,14 @@ admin.site.site_header = "Portofolio Dashboard"
 
 class ProjectConf(admin.ModelAdmin):
     list_display = ("image","project_name","category","description","upload_date")
-    list_filter = ("category")
+    list_filter = ["category"]
 
 class ArticleConf(admin.ModelAdmin):
     list_display = ("id","thumbnail","title","description","content","add_date")
 
 class ContactConf(admin.ModelAdmin):
     list_display = ("username","email","message","date")
-    actions = None
+    readonly_fields = ("username","email","message","date")
 
 admin.site.unregister(Group)
 admin.site.register(tbl_project,ProjectConf)

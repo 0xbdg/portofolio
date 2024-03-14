@@ -26,7 +26,8 @@ class tbl_blog(models.Model):
     add_date = models.DateTimeField(default=datetime.now,editable=False)
 
 class tbl_video(models.Model):
-    pass
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=255)
 
 class tbl_contact(models.Model):
     username = models.CharField(max_length=50,null=True)
