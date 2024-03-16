@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import *
+from .models import *
 
 # Create your views here.
 def index(request):
@@ -12,7 +13,7 @@ def video(request):
     return render(request,"pages/video_player.html")
 
 def project(request):
-    return render(request,"pages/project.html")
+    return render(request,"pages/project.html",{"projects":tbl_project.objects.all()})
 
 def about(request):
     return render(request,"pages/about.html")

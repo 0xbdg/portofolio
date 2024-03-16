@@ -3,20 +3,22 @@
 
 {% block contents %}
 <section class="container flex flex-wrap justify-center">
+  {% for project in projects %}
     <div class="max-w-md bg-white shadow-md rounded-md overflow-hidden m-4">
         <div class="flex">
-          <img class="w-40 h-auto" src="dsds" alt="dsds">
+          <img class="w-40 h-auto" src="{{project.image}}" alt="{{project.project_name}}">
           <div class="p-4 flex flex-col justify-between">
             <div>
-              <h3 class="text-lg font-semibold">Project Title 1</h3>
-              <p class="text-sm text-gray-600 mb-2 break-all">Description of Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3 class="text-lg text-gray-500 font-semibold">{{ project.project_name}}</h3>
+              <p class="text-sm text-gray-600 mb-2 break-all">{{ project.description }}</p>
             </div>
             <div class="text-sm text-gray-500">
-              <p>Added Date: March 16, 2024</p>
-              <p>Category: Category 1</p>
+              <p>Added Date: {{ project.upload_date }}</p>
+              <p>Category: {{ project.category }}</p>
             </div>
           </div>
         </div>
     </div>
+  {% endfor %}
 </section>
 {% endblock contents %}
