@@ -7,7 +7,7 @@ def index(request):
     return render(request,"pages/home.html")
 
 def article(request):
-    return render(request,"pages/article.html")
+    return render(request,"pages/article.html",{"items":tbl_blog.objects.all()})
 
 def video(request):
     return render(request,"pages/video_player.html")
@@ -23,7 +23,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success_page')  # Redirect to a success page
+            return redirect("success_page")
     else:
         form = ContactForm()
     return render(request,"pages/contact.html",{"forms":form})

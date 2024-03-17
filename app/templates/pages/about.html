@@ -1,31 +1,46 @@
 {% extends "layout/base.html" %}
 {% block title %} About Me {% endblock %}
 {% block contents %}
-<section class="pt-36 pb-36 p-4 justify-center items-center w-full">
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-9 px-2">
-        <div class="col-span-4 w-full h-full ">
-            <div class="w-full h-full bg-indigo-400 rounded-md p-2 md:pl-4">
-                <h1 class="text-white text-xl font-medium py-2">About #1</h1>
-                <p class="text-gray-100 sm:text-sm text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt corporis consequuntur voluptate nulla iusto quam ut quasi, eaque quas omnis vero totam ullam, reprehenderit ratione pariatur accusamus suscipit odit nostrum?</p>
+<div class="container mx-auto px-4 py-8 dark:text-white">
+    <section class="mb-12">
+        <div class="max-w-3xl mx-auto">
+            <div class="flex items-center justify-center mb-8">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" class="w-32 h-32 rounded-full">
             </div>
+            <h2 class="text-3xl font-semibold mb-4">John Doe</h2>
+            <p class="leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit, eros vitae eleifend ullamcorper, ex elit sagittis ex, non lobortis lorem sapien at justo. Donec viverra dui sit amet eros lacinia consectetur.
+            </p>
         </div>
-        <div class="relative col-span-1 w-full h-full flex justify-center items-center">
-            <div class="h-full w-1 bg-indigo-300"></div>
-            <div class="absolute w-6 h-6 rounded-full bg-indigo-400 z-10 text-white text-center"></div>
+    </section>
+    <section class="mb-12">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+            <ul class="grid grid-cols-2 gap-4">
+                <li class="">HTML</li>
+                <li class="">CSS</li>
+                <li class="">JavaScript</li>
+                <li class="">React</li>
+                <li class="">Node.js</li>
+                <li class="">Tailwind CSS</li>
+            </ul>
         </div>
-        <div class="col-span-4 w-full h-full"></div>
-
-        <div class="col-span-4 w-full h-full"></div>
-        <div class="relative col-span-1 w-full h-full flex justify-center items-center">
-            <div class="h-full w-1 bg-indigo-300"></div>
-            <div class="absolute w-6 h-6 rounded-full bg-indigo-400 z-10 text-white text-center"></div>
+    </section>
+    <section class="mb-12">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-semibold mb-4">Interests</h2>
+            <p class="leading-relaxed">
+                In my free time, I enjoy hiking, reading, and playing the guitar. I'm also passionate about photography and travel.
+            </p>
         </div>
-        <div class="col-span-4 w-full h-full ">
-            <div class="w-full h-full bg-indigo-400 rounded-md p-2 md:pl-4">
-                <h1 class="text-white text-xl font-medium py-2">About #2</h1>
-                <p class="text-gray-100 sm:text-sm text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt corporis consequuntur voluptate nulla iusto quam ut quasi, eaque quas omnis vero totam ullam, reprehenderit ratione pariatur accusamus suscipit odit nostrum?</p>
-            </div>
+    </section>
+    <section>
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+            <p class="leading-relaxed">
+                Feel free to reach out to me via email at <a href="mailto:john@example.com" class="text-blue-500">john@example.com</a> or connect with me on <a href="#" class="text-blue-500">LinkedIn</a>.
+            </p>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 {% endblock contents%}

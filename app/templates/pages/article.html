@@ -2,5 +2,28 @@
 {% block title %} Article {% endblock %}
 
 {% block contents %}
-
+<section class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-semibold text-center mb-8">Latest Articles</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for item in items %}
+        <div class="relative bg-slate-900 rounded-lg shadow-md overflow-hidden">
+            <img src="{{ item.thumbnail.url }}" alt="Article Image" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <h2 class="text-lg font-semibold mb-2">{{ item.title}}</h2>
+                <p class="break-words mb-4">{{ item.description }}</p>
+                <div class="flex items-center mb-2">
+                    <img src="https://via.placeholder.com/40" alt="Author" class="w-8 h-8 rounded-full mr-2">
+                    <span class="text-sm">{{ user.get_username }}</span>
+                </div>
+                <p class="text-sm">Published: {{ item.date }}</p>
+                <div class="flex flex-wrap mt-4">
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Tech</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Programming</span>
+                </div>
+                <a href="#" class="block text-center bg-blue-500 text-white px-4 py-2 rounded-md mt-4 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock contents %}

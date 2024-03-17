@@ -144,5 +144,5 @@ elif (os.name == 'posix'): #linux & mac
 
 # Media
     
-MEDIA_URL = os.path.join(BASE_DIR,"media/")
-MEDIA_ROOT = "/media/"
+MEDIA_URL = "assets/"
+MEDIA_ROOT = os.path.join(BASE_DIR,"media/assets")
