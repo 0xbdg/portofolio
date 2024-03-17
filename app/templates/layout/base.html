@@ -10,6 +10,7 @@
 		<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 		<link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+		{% block add_other %} {% endblock %}
 		{% tailwind_css %}
 	</head>
 
@@ -17,7 +18,7 @@
 		<header class="border-gray-200 dark:bg-gray-800">
 			<div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
 				<a href="{% url 'index' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
-					<span class="h-8 text-2xl font-extrabold" >0xbdg</span>
+					<span class="h-8 text-2xl font-extrabold" >{{user.get_username}}</span>
 				</a>
 				<div class="flex items-center space-x-6 rtl:space-x-reverse">
 					<a href="{% url "contact" %}" class=" font-bold text-xl  text-blue-600 dark:text-blue-500 hover:underline">Contact</a>

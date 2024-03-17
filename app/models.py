@@ -26,13 +26,13 @@ class tbl_blog(models.Model):
     date = models.DateTimeField(default=datetime.now,editable=False)
 
 class tbl_video(models.Model):
-    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
+    video = models.FileField(upload_to="assets", null=True,blank=True)
     thumbnail = models.ImageField(null=True)
-    date = models.DateTimeField(default=datetime.now)
+    date = models.DateTimeField(default=datetime.now,editable=False)
 
 class tbl_contact(models.Model):
     username = models.CharField(max_length=50,null=True)
     email = models.EmailField()
     message = models.TextField()
-    date = models.DateTimeField(default=datetime.now)
+    date = models.DateTimeField(default=datetime.now,editable=False)

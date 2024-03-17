@@ -17,7 +17,11 @@ class ContactConf(admin.ModelAdmin):
     list_display = ("username","email","message","date")
     readonly_fields = ("username","email","message","date")
 
+class VideoConf(admin.ModelAdmin):
+    list_display = ("title","video","thumbnail","date")
+
 admin.site.unregister(Group)
 admin.site.register(tbl_project,ProjectConf)
 admin.site.register(tbl_blog,ArticleConf)
 admin.site.register(tbl_contact,ContactConf)
+admin.site.register(tbl_video, VideoConf)
