@@ -7,5 +7,6 @@ urlpatterns = [
     path("videos/",video,name="video-player"),
     path("projects/",project,name="project"),
     path("about/",about,name="about"),
-    path("contact/",contact,name="contact")
+    path("contact/",contact,name="contact"),
+    path("articles/<int:pk>",article_detail,name="article-detail")
 ]

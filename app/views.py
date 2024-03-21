@@ -27,3 +27,6 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request,"pages/contact.html",{"forms":form})
+
+def article_detail(request):
+    return render(request,"detil_page/article_detail.html")
