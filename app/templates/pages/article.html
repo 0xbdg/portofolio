@@ -20,7 +20,7 @@
                     <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Tech</span>
                     <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Programming</span>
                 </div>
-                <a href="#" class="block text-center bg-blue-500 text-white px-4 py-2 rounded-md mt-4 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Read More</a>
+                <button onclick="window.location.href='{% url 'article-detail' article_id=item.id %}'" class="block text-center bg-blue-500 text-white px-4 py-2 rounded-md mt-4 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Read More</button>
             </div>
         </div>
         {% endfor %}

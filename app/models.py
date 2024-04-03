@@ -1,6 +1,8 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from datetime import datetime
+from django_ckeditor_5.fields import CKEditor5Field
+import uuid
 
 PROJECT_TYPE = (
     ("Application","Application"),
@@ -8,6 +10,12 @@ PROJECT_TYPE = (
     ("Hardware","Hardware"),
     ("Other","Other")
 )
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 # Create your models here.
 class tbl_project(models.Model):
@@ -18,9 +26,10 @@ class tbl_project(models.Model):
     date = models.DateTimeField(default=datetime.now,editable=False)
 
 class tbl_blog(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.CharField(primary_key=True, default=uuid.uuid4, max_length=36, editable=False)
     thumbnail = models.ImageField(null=True,blank=True)
     title = models.CharField(max_length=255)
+    tags = models.ManyToManyField(Tag)
     description = models.CharField(max_length=255)
     content = RichTextField()
     date = models.DateTimeField(default=datetime.now,editable=False)

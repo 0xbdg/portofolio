@@ -28,5 +28,6 @@ def contact(request):
         form = ContactForm()
     return render(request,"pages/contact.html",{"forms":form})
 
-def article_detail(request):
-    return render(request,"detil_page/article_detail.html")
+def article_detail(request, article_id):
+    blog = tbl_blog.objects.get(pk=article_id)
+    return render(request,"detail_page/article_detail.html", {"article":blog})

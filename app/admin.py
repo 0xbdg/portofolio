@@ -7,11 +7,11 @@ admin.site.index_title = "Dashboard"
 admin.site.site_header = "Portofolio Dashboard"
 
 class ProjectConf(admin.ModelAdmin):
-    list_display = ("image","name","category","description","date")
+    list_display = ("name","image","category","description","date")
     list_filter = ["category"]
 
 class ArticleConf(admin.ModelAdmin):
-    list_display = ("id","thumbnail","title","description","content","date")
+    list_display = ("title","description","tag","content","thumbnail","date")
 
 class ContactConf(admin.ModelAdmin):
     list_display = ("username","email","message","date")
