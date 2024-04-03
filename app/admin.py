@@ -11,7 +11,7 @@ class ProjectConf(admin.ModelAdmin):
     list_filter = ["category"]
 
 class ArticleConf(admin.ModelAdmin):
-    list_display = ("title","description","tags","content","thumbnail","date")
+    list_display = ("title","description","content","thumbnail","date")
     filter_horizontal = ('tags',)
 
     def tags(self, obj):
@@ -27,6 +27,7 @@ class VideoConf(admin.ModelAdmin):
     list_display = ("title","video","thumbnail","date")
 
 admin.site.unregister(Group)
+admin.site.register(Tag)
 admin.site.register(tbl_project,ProjectConf)
 admin.site.register(tbl_blog,ArticleConf)
 admin.site.register(tbl_contact,ContactConf)

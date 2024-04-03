@@ -13,7 +13,7 @@ PROJECT_TYPE = (
 
 TAGS = (
     ("Tech","Tech"),
-    ('Programming','Programming'),
+    ("Programming","Programming"),
     ('Web Development','Web Development'),
     ('Malware Development', 'Malware Development'),
     ('Malware Analysis','Malware Analysis'),
@@ -23,7 +23,7 @@ TAGS = (
 )
 
 class Tag(models.Model):
-    name = models.CharField(max_length=50,choices=TAGS)
+    name = models.CharField(max_length=100,choices=TAGS)
 
     def __str__(self):
         return self.name
