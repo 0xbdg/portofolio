@@ -11,7 +11,13 @@ class ProjectConf(admin.ModelAdmin):
     list_filter = ["category"]
 
 class ArticleConf(admin.ModelAdmin):
-    list_display = ("title","description","tag","content","thumbnail","date")
+    list_display = ("title","description","tags","content","thumbnail","date")
+    filter_horizontal = ('tags',)
+
+    def tags(self, obj):
+        return ", ".join([tag.name for tag in obj.tags.all()])
+    tags.short_description = 'Tags'
+
 
 class ContactConf(admin.ModelAdmin):
     list_display = ("username","email","message","date")
