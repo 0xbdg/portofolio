@@ -18,15 +18,21 @@ def project(request):
 def about(request):
     return render(request,"pages/about.html")
 
-def contact(request):
+def resume(request):
+    return render(request, "pages/resume.html")
+
+def success_page(request):
+    return render(request, "pages/success_page.html")
+
+def feedback(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("success_page")
+            return redirect("success")
     else:
         form = ContactForm()
-    return render(request,"pages/contact.html",{"forms":form})
+    return render(request,"pages/feedback.html",{"forms":form})
 
 def article_detail(request, article_id):
     blog = tbl_blog.objects.get(pk=article_id)

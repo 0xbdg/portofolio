@@ -3,13 +3,21 @@
 {% block add_other %} 
 <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> 
+<link
+  href="https://unpkg.com/video.js@7/dist/video-js.min.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://unpkg.com/@videojs/themes@1/dist/city/index.css"
+  rel="stylesheet"
+/>
 {% endblock %}
 
 {% block contents %}
 <section>
     <video
     id="my-video"
-    class="video-js"
+    class="video-js vjs-theme-city"
     controls
     preload="auto"
     width="640"

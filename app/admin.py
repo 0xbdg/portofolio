@@ -5,6 +5,7 @@ from .models import *
 # Register your models here.
 admin.site.index_title = "Dashboard"
 admin.site.site_header = "Portofolio Dashboard"
+admin.site.site_title = "Portofolio site admin"
 
 class ProjectConf(admin.ModelAdmin):
     list_display = ("name","image","category","description","date")

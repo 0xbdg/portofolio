@@ -7,6 +7,8 @@ urlpatterns = [
     path("videos/",video,name="video-player"),
     path("projects/",project,name="project"),
     path("about/",about,name="about"),
-    path("contact/",contact,name="contact"),
+    path("feedback/",feedback,name="feedback"),
+    path("feedback/success/",success_page,name="success"),
+    path("resume/", resume, name="resume"),
     path("articles/<uuid:article_id>",article_detail,name="article-detail")
 ]
