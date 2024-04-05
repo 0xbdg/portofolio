@@ -1,7 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from datetime import datetime
-from django_ckeditor_5.fields import CKEditor5Field
 import uuid
 
 PROJECT_TYPE = (
@@ -47,11 +46,11 @@ class tbl_blog(models.Model):
 
 class tbl_video(models.Model):
     title = models.CharField(max_length=255)
-    video = models.FileField(upload_to="assets", null=True,blank=True)
+    video = models.FileField(upload_to="assets/", null=True,blank=True)
     thumbnail = models.ImageField(null=True)
     date = models.DateTimeField(default=datetime.now,editable=False)
 
-class tbl_contact(models.Model):
+class tbl_feedback(models.Model):
     username = models.CharField(max_length=50,null=True)
     email = models.EmailField()
     message = models.TextField()
