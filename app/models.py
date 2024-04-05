@@ -46,7 +46,7 @@ class tbl_blog(models.Model):
 
 class tbl_video(models.Model):
     title = models.CharField(max_length=255)
-    video = models.FileField(upload_to="assets/", null=True,blank=True)
+    video = models.FileField(upload_to="videos/", null=True,blank=True)
     thumbnail = models.ImageField(null=True)
     date = models.DateTimeField(default=datetime.now,editable=False)
 
