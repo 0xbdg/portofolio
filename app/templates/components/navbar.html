@@ -1,0 +1,23 @@
+<header class="border-gray-200 dark:bg-gray-800">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+        <a href="https://github.com/0xbdg" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <span class="h-8 text-2xl font-extrabold" >0xbdg</span>
+        </a>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+            <a href="{% url 'feedback' %}" class=" font-bold text-xl  text-blue-600 dark:text-blue-500 hover:underline">Give feedback</a>
+        </div>
+    </div>
+</header>
+<nav class="dark:bg-neutral-800">
+    <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex text-center justify-center text-24">
+            <ul class="flex flex-row font-medium mt-0 space-x-0 rtl:space-x-reverse text-sm">
+                <li><a href="{% url 'index' %}" class="text-gray-900 text-sm p-2 dark:text-white hover:underline">Home</a></li>
+                <li><a href="{% url 'article' %}" class="text-gray-900 text-sm p-2 dark:text-white hover:underline">Article</a></li>
+                <li><a href="{% url 'project'%}" class="text-gray-900 text-sm p-2 dark:text-white hover:underline">Project</a></li>
+                <li><a href="{% url 'video-player'%}" class="text-gray-900 text-sm p-2 dark:text-white hover:underline">Video</a></li>
+                <li><a href="{% url 'about'%}" class="text-gray-900 text-sm p-2 dark:text-white hover:underline">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

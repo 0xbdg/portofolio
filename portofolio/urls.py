@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('portfolio-admin/', admin.site.urls),
     path("",include("app.urls")),
     path("__reload__/", include("django_browser_reload.urls"))
 ]

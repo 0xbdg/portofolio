@@ -1,6 +1,6 @@
 {% extends "layout/base.html" %}
 {% block title %} Projects {% endblock %}
-
+{% block navbar%} {% include "components/navbar.html" %} {% endblock%}
 {% block contents %}
 <section class="container flex flex-wrap justify-center">
   {% for project in projects %}

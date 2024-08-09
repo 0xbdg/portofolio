@@ -1,11 +1,11 @@
 {% extends "layout/base.html" %}
 {% block title %} Home {% endblock %}
-
+{% block navbar%} {% include "components/navbar.html" %} {% endblock%}
 {% block contents %}
 <section class="relative text-white min-h-screen flex items-center justify-center">
     <div class="relative z-10 max-w-4xl text-center px-6">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4"><span class="text-emerald-500">Benjamin</span> Guntara</h1>
-      <p class="text-lg md:text-xl mb-8">[Self Learner] [Malware Analysis enthusiast] [Reverse Engineering enthusiast] [Web Dev] [Desktop app dev]</p>
+      <p class="text-lg md:text-xl mb-8">[Self Learner] [Malware Analysis enthusiast] [Reverse Engineering enthusiast] [Cybersec enthusiast] [App Developer]</p>
       <a href="{% url 'resume' %}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full inline-block shadow-lg transition duration-300 ease-in-out">See my resume</a>
     </div>
 </section>
