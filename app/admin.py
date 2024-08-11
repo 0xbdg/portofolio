@@ -12,7 +12,7 @@ class ProjectConf(admin.ModelAdmin):
     list_filter = ["category"]
 
 class ArticleConf(admin.ModelAdmin):
-    list_display = ("title","description","content","thumbnail","date")
+    list_display = ("title",'author',"description","content","thumbnail","date")
     filter_horizontal = ('tags',)
 
     def tags(self, obj):
@@ -24,12 +24,8 @@ class ContactConf(admin.ModelAdmin):
     list_display = ("username","email","message","date")
     readonly_fields = ("username","email","message","date")
 
-class VideoConf(admin.ModelAdmin):
-    list_display = ("title","video","thumbnail","date")
-
 admin.site.unregister(Group)
 admin.site.register(Tag)
 admin.site.register(tbl_project,ProjectConf)
 admin.site.register(tbl_blog,ArticleConf)
 admin.site.register(tbl_feedback,ContactConf)
-admin.site.register(tbl_video, VideoConf)

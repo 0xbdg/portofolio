@@ -9,9 +9,6 @@ def index(request):
 def article(request):
     return render(request,"pages/article.html",{"items":tbl_blog.objects.all()})
 
-def video(request):
-    return render(request,"pages/video_player.html", {"videos":tbl_video.objects.all()})
-
 def project(request):
     return render(request,"pages/project.html",{"projects":tbl_project.objects.all()})
 

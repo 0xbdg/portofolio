@@ -1,6 +1,8 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from datetime import datetime
+from django.contrib.auth.models import User
+
 import uuid
 
 PROJECT_TYPE = (
@@ -41,13 +43,8 @@ class tbl_blog(models.Model):
     title = models.CharField(max_length=255)
     tags = models.ManyToManyField(Tag)
     description = models.CharField(max_length=255)
+    author = models.ForeignKey(User,on_delete=models.CASCADE,max_length=255)
     content = RichTextField()
-    date = models.DateTimeField(default=datetime.now,editable=False)
-
-class tbl_video(models.Model):
-    title = models.CharField(max_length=255)
-    video = models.FileField(upload_to="videos/", null=True,blank=True)
-    thumbnail = models.ImageField(null=True)
     date = models.DateTimeField(default=datetime.now,editable=False)
 
 class tbl_feedback(models.Model):
