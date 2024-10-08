@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from datetime import datetime
 from django.contrib.auth.models import User
+from django.utils.safestring import mark_safe
 
 import uuid
 
@@ -46,6 +47,9 @@ class tbl_blog(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE,max_length=255)
     content = RichTextField()
     date = models.DateTimeField(default=datetime.now,editable=False)
+
+    def image(self):
+     return mark_safe("<img src='{}' width='100px' height='100px'>".format(self.thumbnail.url))
 
 class tbl_feedback(models.Model):
     username = models.CharField(max_length=50,null=True)

@@ -2,17 +2,12 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 from .models import *
 
-# Register your models here.
-admin.site.index_title = "Dashboard"
-admin.site.site_header = "Portofolio Dashboard"
-admin.site.site_title = "Portofolio site admin"
-
 class ProjectConf(admin.ModelAdmin):
     list_display = ("name","image","category","description","date")
     list_filter = ["category"]
 
 class ArticleConf(admin.ModelAdmin):
-    list_display = ("title",'author',"description","content","thumbnail","date")
+    list_display = ("title",'author',"date")
     filter_horizontal = ('tags',)
 
     def tags(self, obj):

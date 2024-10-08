@@ -3,6 +3,6 @@ django-browser-reload
 django-ckeditor
 django-ipware
 django-js-asset
-django-tailwind
+python-dotenv
 Pillow
 whitenoise
