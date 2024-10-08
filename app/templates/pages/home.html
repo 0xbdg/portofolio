@@ -9,7 +9,7 @@
       <a href="{% url 'resume' %}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full inline-block shadow-lg transition duration-300 ease-in-out">See my resume</a>
     </div>
 </section>
-<div class="container mx-auto px-4 py-8">
+<section class="container mx-auto px-4 py-8">
   <div class="flex justify-between items-center mb-6">
     <h2 class="text-3xl font-bold">
      Recent
@@ -17,80 +17,28 @@
         Projects
       </span>
     </h2>
-    <a class="text-blue-400 hover:underline" href="#">
+    <a class="text-blue-400 hover:underline" href="{% url 'project'%}">
       View all Project
       <i class="fas fa-arrow-right">
       </i>
     </a>
   </div>
-  <div class="bg-gray-800 p-6 rounded-lg mb-6 flex items-center">
-   <div>
-    <h2 class="text-xl font-bold">
-     Project 1
-    </h2>
-    <div class="flex space-x-2 mt-2 break-words">
-     <span class="bg-pink-500 text-white px-2 py-1 rounded-full text-xs">
-      Astro.js
-     </span>
-     <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs">
-      Web design
-     </span>
-     <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">
-      Tailwind.css
-     </span>
-     <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs">
-      TypeScript
-     </span>
+  {% for project in projects %}
+  <div class="bg-gray-800 p-6 rounded-lg mb-6 flex items-center overflow-hidden break-words">
+    <div>
+      <h2 class="text-xl font-bold">{{ project.name}}</h2>
+      <div class="flex space-x-2 mt-2 break-words">
+        <span class="bg-pink-500 text-white px-2 py-1 rounded-full text-xs">Astro.js</span>
+        <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs">Web design</span>
+        <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Tailwind.css</span>
+        <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs">TypeScript</span>
+      </div>
+      <p class="mt-4 text-gray-400 break-words">{{ project.description}}</p>
     </div>
-    <p class="mt-4 text-gray-400">
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum. Nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim.
-    </p>
-   </div>
   </div>
-  <div class="bg-gray-800 p-6 rounded-lg mb-6 flex items-center">
-   <div>
-    <h2 class="text-xl font-bold">
-     Project 2
-    </h2>
-    <div class="flex space-x-2 mt-2">
-     <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">
-      Next.js
-     </span>
-     <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs">
-      Blog
-     </span>
-     <span class="bg-yellow-500 text-white px-2 py-1 rounded-full text-xs">
-      JavaScript
-     </span>
-    </div>
-    <p class="mt-4 text-gray-400">
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum. Nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim.
-    </p>
-   </div>
-  </div>
-  <div class="bg-gray-800 p-6 rounded-lg flex items-center">
-   <div>
-    <h2 class="text-xl font-bold">
-     Project 3
-    </h2>
-    <div class="flex space-x-2 mt-2">
-     <span class="bg-pink-500 text-white px-2 py-1 rounded-full text-xs">
-      Astro.js
-     </span>
-     <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">
-      Bootstrap
-     </span>
-     <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs">
-      TypeScript
-     </span>
-    </div>
-    <p class="mt-4 text-gray-400">
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum. Nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim.
-    </p>
-   </div>
-  </div>
-</div>
-<div class="container mx-auto px-4 py-8">
+  {% endfor %}
+</section>
+<section class="container mx-auto px-4 py-8">
   <div class="flex justify-between items-center mb-6">
    <h2 class="text-3xl font-bold">
     Recent
@@ -98,57 +46,30 @@
      Posts
     </span>
    </h2>
-   <a class="text-blue-400 hover:underline" href="#">
+   <a class="text-blue-400 hover:underline" href="{% url 'article'%}">
     View all Posts
     <i class="fas fa-arrow-right">
     </i>
    </a>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-   <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-    <img alt="A laptop on a desk with a notebook and a cup of coffee" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/iCpoX1zJDCYhKtl5DAymMDbJ5jetpTKeM8986e5bFrEZJlJnA.jpg" width="600"/>
-    <div class="p-4">
-     <h3 class="text-xl font-bold mb-2">
-      Typography example
-     </h3>
-     <p class="text-gray-400 text-sm mb-4">
-      Feb 6, 2020
-     </p>
-     <p class="text-gray-300">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi.
-     </p>
+    {% for article in articles %}
+    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+      <img alt="A laptop on a desk with a notebook and a cup of coffee" class="w-full h-48 object-cover" height="400" src="{{ article.thumbnail.url}}" width="600"/>
+      <div class="p-4">
+        <h3 class="text-xl font-bold mb-2 break-words">{{article.title}}</h3>
+        <p class="text-gray-400 text-sm mb-4">{{ article.date}}</p>
+        <p class="text-gray-300 break-words">{{article.description}}</p>
+        <div class="flex flex-wrap mt-4">
+          {% for tag in article.tags.all %}
+          <span class="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
     </div>
-   </div>
-   <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-    <img alt="A sticky note with a lightbulb drawing pinned to a corkboard" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/t4QXz8Y40Z75MZw42Gjfil2oQt2mBXsC6NxFI1yMaLYVSZyJA.jpg" width="600"/>
-    <div class="p-4">
-     <h3 class="text-xl font-bold mb-2">
-      5th Lorem ipsum dolor sit
-     </h3>
-     <p class="text-gray-400 text-sm mb-4">
-      Feb 6, 2020
-     </p>
-     <p class="text-gray-300">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi.
-     </p>
-    </div>
-   </div>
-   <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-    <img alt="A notebook and pen on a desk with a plant in the background" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/Mxd19yU9KZrbGFKapUpRf6YAfkn0FnUy59sJL3dUuOctkykTA.jpg" width="600"/>
-    <div class="p-4">
-     <h3 class="text-xl font-bold mb-2">
-      4th Lorem ipsum dolor sit
-     </h3>
-     <p class="text-gray-400 text-sm mb-4">
-      Feb 4, 2020
-     </p>
-     <p class="text-gray-300">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi.
-     </p>
-    </div>
-   </div>
+    {% endfor %}
   </div>
-</div>
+</section>
 {% endblock contents %}
 
 {% block footer %} {% include "components/footer.html" %}{% endblock %}

@@ -3,10 +3,10 @@
 {% block navbar%} {% include "components/navbar.html" %} {% endblock%}
 {% block contents %}
 <section class="container flex flex-wrap justify-center">
-  {% for project in projects %}
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-3xl font-semibold text-center mb-8">Project Gallery</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for project in projects %}
         <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
             <img src="{{ project.image.url }}" alt="{{ project.name }}" class="w-full h-48 object-cover">
             <div class="p-4">
@@ -16,8 +16,8 @@
                 <p class="text-sm text-gray-500">Category: {{ project.category }}</p>
             </div>
         </div>
-     </div>
+        {% endfor %}
+    </div>
   </div>
-  {% endfor %}
 </section>
 {% endblock contents %}

@@ -31,14 +31,14 @@ class Tag(models.Model):
         return self.name
 
 # Create your models here.
-class tbl_project(models.Model):
+class Project(models.Model):
     image = models.ImageField(null=True,blank=True)
     name = models.CharField(max_length=255,null=True)
     category = models.CharField(max_length=50,choices=PROJECT_TYPE,null=True)
     description = models.TextField()
     date = models.DateTimeField(default=datetime.now,editable=False)
 
-class tbl_blog(models.Model):
+class Blog(models.Model):
     id = models.CharField(primary_key=True, default=uuid.uuid4, max_length=36, editable=False)
     thumbnail = models.ImageField(null=True,blank=True)
     title = models.CharField(max_length=255)
@@ -48,10 +48,10 @@ class tbl_blog(models.Model):
     content = RichTextField()
     date = models.DateTimeField(default=datetime.now,editable=False)
 
-    def image(self):
-     return mark_safe("<img src='{}' width='100px' height='100px'>".format(self.thumbnail.url))
+    def item(self):
+        return mark_safe("<img src='{}' width='100px' height='100px'>".format(self.thumbnail.url))
 
-class tbl_feedback(models.Model):
+class Feedback(models.Model):
     username = models.CharField(max_length=50,null=True)
     email = models.EmailField()
     message = models.TextField()

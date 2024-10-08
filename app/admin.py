@@ -21,6 +21,6 @@ class ContactConf(admin.ModelAdmin):
 
 admin.site.unregister(Group)
 admin.site.register(Tag)
-admin.site.register(tbl_project,ProjectConf)
-admin.site.register(tbl_blog,ArticleConf)
-admin.site.register(tbl_feedback,ContactConf)
+admin.site.register(Project,ProjectConf)
+admin.site.register(Blog,ArticleConf)
+admin.site.register(Feedback,ContactConf)

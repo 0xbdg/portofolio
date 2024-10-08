@@ -4,13 +4,15 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return render(request,"pages/home.html")
+    project = Project.objects.all()
+    article = Blog.objects.all()
+    return render(request,"pages/home.html", context={'projects':project, 'articles':article})
 
 def article(request):
-    return render(request,"pages/article.html",{"items":tbl_blog.objects.all()})
+    return render(request,"pages/article.html",{"items":Blog.objects.all()})
 
 def project(request):
-    return render(request,"pages/project.html",{"projects":tbl_project.objects.all()})
+    return render(request,"pages/project.html",{"projects":Project.objects.all()})
 
 def about(request):
     return render(request,"pages/about.html")
@@ -32,5 +34,5 @@ def feedback(request):
     return render(request,"pages/feedback.html",{"forms":form})
 
 def article_detail(request, article_id):
-    blog = tbl_blog.objects.get(pk=article_id)
+    blog = Blog.objects.get(pk=article_id)
     return render(request,"detail_page/article_detail.html", {"article":blog})

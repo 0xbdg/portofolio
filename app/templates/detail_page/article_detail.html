@@ -11,7 +11,7 @@
     <body class="box-border">
         <article class="max-w-2xl px-6 py-24 mx-auto space-y-16 dark:bg-gray-100 dark:text-gray-900">
             <div class="w-full mx-auto space-y-4">
-                <h1 class="text-5xl font-bold leading-none">{{article.title}}</h1>
+                <h1 class="text-5xl font-bold leading-none break-words">{{article.title}}</h1>
                 <div class="flex flex-wrap space-x-2 text-sm dark:text-gray-600">
                     {% for blog in article.tags.all %}
                     <a rel="noopener noreferrer" href="#" class="p-1 hover:underline">#{{blog}}</a>
