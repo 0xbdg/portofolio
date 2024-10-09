@@ -4,8 +4,15 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    project = Project.objects.all()
-    article = Blog.objects.all()
+    project = Project.objects.all()[:3]
+    article = Blog.objects.all()[:3]  
+
+    if Project.objects.count() <= 3:
+        project = Project.objects.all()
+    
+    if Blog.objects.count() <= 3:
+        article = Blog.objects.all()
+
     return render(request,"pages/home.html", context={'projects':project, 'articles':article})
 
 def article(request):
