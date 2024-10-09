@@ -48,7 +48,7 @@ class Blog(models.Model):
     content = RichTextField()
     date = models.DateTimeField(default=datetime.now,editable=False)
 
-    def item(self):
+    def thumbnail(self):
         return mark_safe("<img src='{}' width='100px' height='100px'>".format(self.thumbnail.url))
 
 class Feedback(models.Model):
